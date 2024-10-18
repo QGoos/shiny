@@ -87,6 +87,9 @@ type Window interface {
 	// Publish flushes any pending Upload and Draw calls to the window, and
 	// swaps the back buffer to the front.
 	Publish() PublishResult
+
+	// Expose reference to hwnd
+	HwndRef() *w32.HWND
 }
 
 // PublishResult is the result of an Window.Publish call.
