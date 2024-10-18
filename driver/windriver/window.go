@@ -48,6 +48,10 @@ type windowImpl struct {
 	clientRect     *w32.RECT
 }
 
+func (w *windowImpl) HwndRef() *w32.HWND {
+	return &w.hwnd
+}
+
 func (w *windowImpl) Release() {
 	win32.Release(w32.HWND(w.hwnd))
 }
